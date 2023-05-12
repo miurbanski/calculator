@@ -20,11 +20,11 @@ class FeeCalculator implements FeeCalculatorInterface
     private function validateLoanProposal(LoanProposal $application): bool
     {
         if (false === FeeStructure::isTermValid($application->getTerm())) {
-            return false;
+            throw new \InvalidArgumentException('Invalid Term Value');
         }
 
-        if (FeeStructure::isValueValid($application->getAmount())) {
-            return false;
+        if (false === FeeStructure::isValueValid($application->getAmount())) {
+            throw new \InvalidArgumentException('Invalid Amount Value');
         }
 
         return true;

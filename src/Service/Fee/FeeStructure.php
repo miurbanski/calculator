@@ -6,8 +6,8 @@ namespace PragmaGoTech\Interview\Service\Fee;
 
 class FeeStructure
 {
-    const MIN_VALUE_ALLOWED = 1000;
-    const MAX_VALUE_ALLOWED = 20000;
+    private const MIN_VALUE_ALLOWED = 1000;
+    private const MAX_VALUE_ALLOWED = 20000;
 
     private const STRUCTURE = [
         12 => [
@@ -68,6 +68,6 @@ class FeeStructure
 
     public static function isValueValid(float $value): bool
     {
-        return fmod($value, self::MIN_VALUE_ALLOWED) === 0.0 && $value >= self::MIN_VALUE_ALLOWED && $value <= self::MAX_VALUE_ALLOWED;
+        return $value >= self::MIN_VALUE_ALLOWED && $value <= self::MAX_VALUE_ALLOWED;
     }
 }

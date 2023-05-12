@@ -11,12 +11,12 @@ final class FeeStructureTest extends TestCase
 {
     public function testCanCheckIfValueIsValid(): void
     {
-        self::assertTrue(FeeStructure::isValueValid(1000.0));
+        self::assertTrue(FeeStructure::isValueValid(1000));
     }
 
     public function testCanCheckIfValueIsNotValid(): void
     {
-        self::assertFalse(FeeStructure::isValueValid(1001.0));
+        self::assertFalse(FeeStructure::isValueValid(100100));
     }
 
     public function testCanCheckIsTermValid(): void
